@@ -26,7 +26,7 @@
       $(function () {
         var socket = io();
         $('form').submit(function () {
-          const user = $('.user').val();
+          const user = $('.user').val() || 'Anonymous user';
           const value = $('#m').val();
           socket.emit('chat message', { user, value });
           $('#m').val('');
